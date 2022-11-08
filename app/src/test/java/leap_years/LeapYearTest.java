@@ -47,5 +47,11 @@ public class LeapYearTest {
         LeapYear leapYear = new LeapYear(year);
         assertTrue("Returns true if year is divisible by 4 but not by 100", leapYear.check());
     }
+    @Test
+    public void shouldBeDivisibleBy4NotBy100Year2012() {
+        Integer year = 2012;
+        LeapYear leapYear = new LeapYear(year);
+        assertTrue("Returns true if year is divisible by 4 but not by 100", leapYear.check());
+    }
 }
 
