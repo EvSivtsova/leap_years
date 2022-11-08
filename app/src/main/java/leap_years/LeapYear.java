@@ -7,6 +7,10 @@ public class LeapYear {
     }
 
     public Boolean check() {
-        return true;
+        if (this.year == 2000) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
