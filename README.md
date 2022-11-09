@@ -30,3 +30,7 @@ A simple tool that will tell you whether a year is a leap year, according to the
 Write a program that takes a start year and an end year and returns an array of all the leap years between.
 
 Write a program that when given a year, will return the closest leap year (this could be before or after the given year)
+
+# Resulting output
+
+<img src="https://github.com/EvSivtsova/leap_years/blob/main/leap_year_output.png"/>
