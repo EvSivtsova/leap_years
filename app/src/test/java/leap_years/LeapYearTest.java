@@ -107,7 +107,7 @@ public class LeapYearTest {
     }
 
     @Test
-    public void shouldReturnClosestLeapYear_WhenLeapYearIsInTheMiddleBetweenBeforeAndAfterLeapYears() {
+    public void shouldReturnClosestLeapYear_WhenYearIsInTheMiddleBetweenBeforeAndAfterLeapYears() {
         Integer year = 2010;
         Integer expectedValue = 2008;
 
