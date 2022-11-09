@@ -9,15 +9,12 @@ public class App {
     }
 
     public static void main(String[] args) {
-        LeapYear leapYear2000 = new LeapYear(2000);
-        System.out.println(leapYear2000.check());
-        LeapYear leapYear1970 = new LeapYear(1970);
-        System.out.println(leapYear1970.check());
-        LeapYear leapYear1900 = new LeapYear(1900);
-        System.out.println(leapYear1900.check());
-        LeapYear leapYear1988 = new LeapYear(1988);
-        System.out.println(leapYear1988.check());
-        LeapYear leapYear1500 = new LeapYear(1500);
-        System.out.println(leapYear1500.check());
+        LeapYear leapYear = new LeapYear();
+        System.out.println(leapYear.check(2000));
+        System.out.println(leapYear.check(1970));
+        System.out.println(leapYear.check(1900));
+        System.out.println(leapYear.check(1988));
+        System.out.println(leapYear.check(1500));
+        System.out.println(leapYear.checkRange(1500, 1520));
     }
 }

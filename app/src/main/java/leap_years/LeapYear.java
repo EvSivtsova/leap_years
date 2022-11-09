@@ -1,18 +1,26 @@
 package leap_years;
 
-public class LeapYear {
-    Integer year;
-    public LeapYear(Integer year) {
-        this.year = year;
-    }
+import java.util.ArrayList;
 
-    public Boolean check() {
-        if (this.year % 4 == 0 && this.year % 100 != 0) {
+public class LeapYear {
+
+    public Boolean check(Integer year) {
+        if (year % 4 == 0 && year % 100 != 0) {
             return true;
-        } else if (this.year % 400 == 0) {
+        } else if (year % 400 == 0) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public ArrayList<Integer> checkRange(Integer startYear, Integer endYear) {
+        ArrayList<Integer> yearRange = new ArrayList<Integer>();
+        for (Integer year = startYear; year <= endYear; year++) {
+            if (this.check(year)) {
+                yearRange.add(year);
+            }
+        }
+        return yearRange;
     }
 }
