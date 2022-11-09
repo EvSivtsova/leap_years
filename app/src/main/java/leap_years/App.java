@@ -4,6 +4,7 @@
 package leap_years;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
     public static final String ANSI_BLUE = "\u001B[34m";
@@ -49,7 +50,13 @@ public class App {
         System.out.printf("Year %d: the closest leap year is %d\n", year2008, closestLeapYearTo2008);
         System.out.printf("Year %d: the closest leap year is %d\n", year2009, closestLeapYearTo2009);
         System.out.printf("Year %d: the closest leap year is %d\n", year2010, closestLeapYearTo2010);
-        System.out.printf("Year %d: the closest leap year is %d\n", year2011, closestLeapYearTo2011);
+        System.out.printf("Year %d: the closest leap year is %d\n\n", year2011, closestLeapYearTo2011);
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(ANSI_BLUE + "Please enter a year you would like to check" + ANSI_RESET);
+        Integer yearToCheck = Integer.valueOf(scanner.nextLine());
+        Boolean isYearToCheckALeapYear = leapYear.check(yearToCheck);
+        System.out.printf("Is %d a leap year? %B\n\n", yearToCheck, isYearToCheckALeapYear);
+        scanner.close();
     }
 }
