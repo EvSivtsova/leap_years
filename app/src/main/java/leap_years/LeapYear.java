@@ -28,7 +28,9 @@ public class LeapYear {
         if (this.check(year)) {
             return year;
         }
-        if (Math.abs(this.getClosestLeapYearBeforeGivenYear(year) - year) < Math.abs(this.getClosestLeapYearAfterGivenYear(year) - year) ) {
+        if (Math.abs(this.getClosestLeapYearBeforeGivenYear(year) - year) < Math.abs(this.getClosestLeapYearAfterGivenYear(year) - year)) {
+            return this.getClosestLeapYearBeforeGivenYear(year);
+        } else if (Math.abs(this.getClosestLeapYearBeforeGivenYear(year) - year) == Math.abs(this.getClosestLeapYearAfterGivenYear(year) - year)) {
             return this.getClosestLeapYearBeforeGivenYear(year);
         }
         return  this.getClosestLeapYearAfterGivenYear(year);

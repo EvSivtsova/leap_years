@@ -77,7 +77,7 @@ public class LeapYearTest {
     }
 
     @Test
-    public void shouldReturnClosestLeapYears_WhenProvidedLeapYear_ReturnsThatYear() {
+    public void shouldReturnClosestLeapYear_WhenProvidedLeapYear_ReturnsThatYear() {
         Integer year = 2008;
         Integer expectedValue = 2008;
 
@@ -87,7 +87,7 @@ public class LeapYearTest {
     }
 
     @Test
-    public void shouldReturnClosestLeapYears_WhenLeapYearIsBeforeGivenYear() {
+    public void shouldReturnClosestLeapYear_WhenLeapYearIsBeforeGivenYear() {
         Integer year = 2009;
         Integer expectedValue = 2008;
 
@@ -97,13 +97,23 @@ public class LeapYearTest {
     }
 
     @Test
-    public void shouldReturnClosestLeapYears_WhenLeapYearIsAfterGivenYear() {
+    public void shouldReturnClosestLeapYear_WhenLeapYearIsAfterGivenYear() {
         Integer year = 2011;
         Integer expectedValue = 2012;
 
         LeapYear leapYear = new LeapYear();
         Integer result = leapYear.getClosest(year);
         assertEquals("Checks the leap year after given year and returns it", expectedValue, result);
+    }
+
+    @Test
+    public void shouldReturnClosestLeapYear_WhenLeapYearIsInTheMiddleBetweenBeforeAndAfterLeapYears() {
+        Integer year = 2010;
+        Integer expectedValue = 2008;
+
+        LeapYear leapYear = new LeapYear();
+        Integer result = leapYear.getClosest(year);
+        assertEquals("Returns leap year before given year if it is in the middle between before and after", expectedValue, result);
     }
 }
 
