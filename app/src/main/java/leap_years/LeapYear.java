@@ -1,6 +1,7 @@
 package leap_years;
 
 import java.util.ArrayList;
+import java.lang.Math.*;
 
 public class LeapYear {
 
@@ -22,5 +23,12 @@ public class LeapYear {
             }
         }
         return yearRange;
+    }
+
+    public Integer getClosest(Integer year) {
+        if (this.check(year)) {
+            return year;
+        }
+        return null;
     }
 }

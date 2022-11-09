@@ -74,5 +74,15 @@ public class LeapYearTest {
         ArrayList<Integer> result = leapYear.checkRange(startYear, endYear);
         assertEquals("Returns an array of leap years between start and end years", expectedValue, result);
     }
+
+    @Test
+    public void shouldReturnClosestLeapYears_WhenProvidedLeapYear_ReturnsThatYear() {
+        Integer year = 2008;
+        Integer expectedValue = 2008;
+
+        LeapYear leapYear = new LeapYear();
+        Integer result = leapYear.getClosest(year);
+        assertEquals("Checks whether it is a leap year and returns it", expectedValue, result);
+    }
 }
 
