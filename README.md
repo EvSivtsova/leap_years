@@ -31,6 +31,7 @@ Write a program that takes a start year and an end year and returns an array of 
 
 Write a program that when given a year, will return the closest leap year (this could be before or after the given year)
 
-# Resulting output
+# Outputs
 
-<img src="https://github.com/EvSivtsova/leap_years/blob/main/leap_year_output.png"/>
+<img src="https://github.com/EvSivtsova/leap_years/blob/main/outputs/leap_year_output_with_user_input.png"/>
+<img src="https://github.com/EvSivtsova/leap_years/blob/main/outputs/leap_year_tests_output.png"/>
