@@ -3,18 +3,53 @@
  */
 package leap_years;
 
+import java.util.ArrayList;
+
 public class App {
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_RESET = "\u001B[0m";
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
         LeapYear leapYear = new LeapYear();
-        System.out.println(leapYear.check(2000));
-        System.out.println(leapYear.check(1970));
-        System.out.println(leapYear.check(1900));
-        System.out.println(leapYear.check(1988));
-        System.out.println(leapYear.check(1500));
-        System.out.println(leapYear.checkRange(1500, 1520));
+        System.out.println(ANSI_BLUE + "Verifies whether the given year is a leap year" + ANSI_RESET);
+        Integer year2000 = 2000;
+        Boolean is2000ALeapYear = leapYear.check(year2000);
+        System.out.printf("Is %d a leap year? %B\n", year2000, is2000ALeapYear);
+        Integer year1970 = 1970;
+        Boolean is1970ALeapYear = leapYear.check(year1970);
+        System.out.printf("Is %d a leap year? %B\n", year1970, is1970ALeapYear);
+        Integer year1900 = 1900;
+        Boolean is1900ALeapYear = leapYear.check(year1900);
+        System.out.printf("Is %d a leap year? %B\n", year1900, is1900ALeapYear);
+        Integer year1988 = 1988;
+        Boolean is1988ALeapYear = leapYear.check(year1988);
+        System.out.printf("Is %d a leap year? %B\n", year1988, is1988ALeapYear);
+        Integer year1500 = 1500;
+        Boolean is1500ALeapYear = leapYear.check(year1500);
+        System.out.printf("Is %d a leap year? %B\n\n", year1500, is1500ALeapYear);
+
+        System.out.println(ANSI_BLUE + "Given a start year and an end year, returns an array of all leap years between:" + ANSI_RESET);
+        Integer startYear = 1500;
+        Integer endYear = 1520;
+        ArrayList<Integer> leapYearsArray = leapYear.checkRange(startYear, endYear);
+        System.out.println("Leap years between " + startYear + " and " +endYear + " are " + leapYearsArray + "\n");
+
+        System.out.println(ANSI_BLUE + "Given a year, returns the closest leap year:" + ANSI_RESET);
+        Integer year2008 = 2008;
+        Integer year2009 = 2009;
+        Integer year2010 = 2010;
+        Integer year2011 = 2011;
+        Integer closestLeapYearTo2008 = leapYear.getClosest(year2008);
+        Integer closestLeapYearTo2009 = leapYear.getClosest(year2009);
+        Integer closestLeapYearTo2010 = leapYear.getClosest(year2010);
+        Integer closestLeapYearTo2011 = leapYear.getClosest(year2011);
+        System.out.printf("Year %d: the closest leap year is %d\n", year2008, closestLeapYearTo2008);
+        System.out.printf("Year %d: the closest leap year is %d\n", year2009, closestLeapYearTo2009);
+        System.out.printf("Year %d: the closest leap year is %d\n", year2010, closestLeapYearTo2010);
+        System.out.printf("Year %d: the closest leap year is %d\n", year2011, closestLeapYearTo2011);
+
     }
 }
