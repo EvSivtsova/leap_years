@@ -30,10 +30,22 @@ public class LeapYear {
         if (this.check(year)) {
             leapYear = year;
         } else {
+            Integer leapYearBeforeGivenYear = null;
+            Integer leapYearAfterGivenYear = null;
             for (Integer yearToCheck = year; yearToCheck > year - 4; yearToCheck--) {
                 if (this.check(yearToCheck)) {
-                    leapYear = yearToCheck;
+                    leapYearBeforeGivenYear = yearToCheck;
                 }
+            }
+            for (Integer yearToCheck = year; yearToCheck < year + 4; yearToCheck++) {
+                if (this.check(yearToCheck)) {
+                    leapYearAfterGivenYear = yearToCheck;
+                }
+            }
+            if (Math.abs(leapYearBeforeGivenYear - year) < Math.abs(leapYearAfterGivenYear - year)) {
+                leapYear = leapYearBeforeGivenYear;
+            } else {
+                leapYear = leapYearAfterGivenYear;
             }
         }
         return leapYear;
