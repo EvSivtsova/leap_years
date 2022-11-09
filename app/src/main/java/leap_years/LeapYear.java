@@ -28,11 +28,12 @@ public class LeapYear {
     public Integer getClosest(Integer year) {
         Integer leapYear = null;
         if (this.check(year)) {
-            return year;
-        }
-        for (Integer yearToCheck = year; yearToCheck > year - 4; yearToCheck--) {
-            if (this.check(yearToCheck)) {
-                return  yearToCheck;
+            leapYear = year;
+        } else {
+            for (Integer yearToCheck = year; yearToCheck > year - 4; yearToCheck--) {
+                if (this.check(yearToCheck)) {
+                    leapYear = yearToCheck;
+                }
             }
         }
         return leapYear;
