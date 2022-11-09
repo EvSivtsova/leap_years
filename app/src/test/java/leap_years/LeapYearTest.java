@@ -48,6 +48,7 @@ public class LeapYearTest {
         LeapYear leapYear = new LeapYear();
         assertTrue("Returns true if year is divisible by 4 but not by 100", leapYear.check(year));
     }
+
     @Test
     public void shouldBeDivisibleBy4NotBy100Year2012() {
         Integer year = 2012;
@@ -102,7 +103,7 @@ public class LeapYearTest {
 
         LeapYear leapYear = new LeapYear();
         Integer result = leapYear.getClosest(year);
-        assertEquals("Checks the leap year before given year and returns it", expectedValue, result);
+        assertEquals("Checks the leap year after given year and returns it", expectedValue, result);
     }
 }
 

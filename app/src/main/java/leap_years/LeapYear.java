@@ -1,7 +1,6 @@
 package leap_years;
 
 import java.util.ArrayList;
-import java.lang.Math.*;
 
 public class LeapYear {
 
@@ -26,26 +25,31 @@ public class LeapYear {
     }
 
     public Integer getClosest(Integer year) {
-        Integer leapYear = null;
         if (this.check(year)) {
-            leapYear = year;
-        } else {
-            Integer leapYearBeforeGivenYear = null;
-            Integer leapYearAfterGivenYear = null;
-            for (Integer yearToCheck = year; yearToCheck > year - 4; yearToCheck--) {
-                if (this.check(yearToCheck)) {
-                    leapYearBeforeGivenYear = yearToCheck;
-                }
+            return year;
+        }
+        if (Math.abs(this.getClosestLeapYearBeforeGivenYear(year) - year) < Math.abs(this.getClosestLeapYearAfterGivenYear(year) - year) ) {
+            return this.getClosestLeapYearBeforeGivenYear(year);
+        }
+        return  this.getClosestLeapYearAfterGivenYear(year);
+    }
+
+
+    private Integer getClosestLeapYearAfterGivenYear(Integer year) {
+        Integer leapYear = null;
+        for (Integer yearToCheck = year; yearToCheck < year + 4; yearToCheck++) {
+            if (this.check(yearToCheck)) {
+                leapYear = yearToCheck;
             }
-            for (Integer yearToCheck = year; yearToCheck < year + 4; yearToCheck++) {
-                if (this.check(yearToCheck)) {
-                    leapYearAfterGivenYear = yearToCheck;
-                }
-            }
-            if (Math.abs(leapYearBeforeGivenYear - year) < Math.abs(leapYearAfterGivenYear - year)) {
-                leapYear = leapYearBeforeGivenYear;
-            } else {
-                leapYear = leapYearAfterGivenYear;
+        }
+        return leapYear;
+    }
+
+    private Integer getClosestLeapYearBeforeGivenYear(Integer year) {
+        Integer leapYear = null;
+        for (Integer yearToCheck = year; yearToCheck > year - 4; yearToCheck--) {
+            if (this.check(yearToCheck)) {
+                leapYear = yearToCheck;
             }
         }
         return leapYear;
