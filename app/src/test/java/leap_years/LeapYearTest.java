@@ -84,5 +84,15 @@ public class LeapYearTest {
         Integer result = leapYear.getClosest(year);
         assertEquals("Checks whether it is a leap year and returns it", expectedValue, result);
     }
+
+    @Test
+    public void shouldReturnClosestLeapYears_WhenLeapYearIsBeforeGivenYear() {
+        Integer year = 2009;
+        Integer expectedValue = 2008;
+
+        LeapYear leapYear = new LeapYear();
+        Integer result = leapYear.getClosest(year);
+        assertEquals("Checks the leap year before given year and returns it", expectedValue, result);
+    }
 }
 
