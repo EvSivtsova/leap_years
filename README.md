@@ -11,7 +11,7 @@ A simple tool that will tell you whether a year is a leap year, according to the
 * All years divisible by 4 and not by 100 ARE leap years (e.g. 2004, 2008 and 2012 were leap years)
 * All years not divisible by 4 are NOT leap years (e.g. 2009, 2010 and 2011 were not leap years)
 
-### Acceptance Criteria
+## Acceptance Criteria
 2.4.1 :001 > require './lib/leap_years.rb'<br>
 => true<br>
 2.4.1 :002 > leap_year?(2000)<br>
@@ -31,7 +31,10 @@ Write a program that takes a start year and an end year and returns an array of 
 
 Write a program that when given a year, will return the closest leap year (this could be before or after the given year)
 
-# Outputs
+## Program output
 
 <img src="https://github.com/EvSivtsova/leap_years/blob/main/outputs/leap_year_output_with_user_input.png"/>
-<img src="https://github.com/EvSivtsova/leap_years/blob/main/outputs/leap_year_tests_output.png"/>
+
+## Test coverage
+
+<img src="https://github.com/EvSivtsova/leap_years/blob/main/outputs/leap_year_test_coverage.png"/>
